@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    margin-top: 90px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #ffe4ee;
+    color: #222;
 }
 
 header {
@@ -13,7 +13,11 @@ header {
 }
 
 h1 {
-    margin: 0;
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #e75480;
+    letter-spacing: 2px;
 }
 
 .container {
@@ -35,14 +39,44 @@ h1 {
     height: auto;
 }
 
+.project {
+    background: #fff0fa;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(231, 84, 128, 0.08);
+    padding: 32px 24px;
+    margin: 32px auto;
+    max-width: 700px;
+    transition: box-shadow 0.2s;
+}
+
+.project:hover {
+    box-shadow: 0 4px 24px rgba(231, 84, 128, 0.18);
+}
+
+.project h2 {
+    color: #a259e6;
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    letter-spacing: 1px;
+}
+
+.project p {
+    font-size: 1.1rem;
+    color: #444;
+}
+
+hr {
+    border: none;
+    border-top: 2px dashed #e75480;
+    margin: 24px auto;
+    max-width: 600px;
+}
+
 footer {
     text-align: center;
-    padding: 10px 0;
-    background: #35424a;
-    color: #ffffff;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    color: #888;
+    margin: 40px 0 10px 0;
+    font-size: 1rem;
 }
 
 .custom-nav {
@@ -78,7 +112,7 @@ body {
 }
 .custom-nav .emoji {
     margin-right: 8px;
-    font-size: 1.5rem;
+    font-size: 1rem;
 }
 .custom-nav a {
     color: #111;
