@@ -10,10 +10,10 @@
     <header>
         <nav class="custom-nav">
             <ul>
-                <li><span class="emoji">🏠</span> <a href="home.html"><strong>HOME</strong></a></li>
+                <li><span class="emoji">🏠</span> <a href="index.html"><strong>HOME</strong></a></li>
                 <li><span class="emoji">💛</span> <a href="about.html"><strong>ABOUT ME</strong></a></li>
                 <li><span class="emoji">✨</span> <a href="project.html"><strong>PROJECTS</strong></a></li>
-                <li><span class="emoji">❄️</span> <a href="#contact"><strong>CONTACT</strong></a></li>
+                <li><span class="emoji">❄️</span> <a href="contact.html"><strong>CONTACT</strong></a></li>
             </ul>
         </nav>
     </header>
@@ -32,6 +32,27 @@
         <section class="project">
             <h2>Project 3: Network Scanner</h2>
             <p>A network scanning tool written in Python for identifying devices on a local network.</p>
+        </section>
+        <hr>
+        <section class="project">
+            <h2>Caesar Cipher Brute Force Script</h2>
+            <p>
+                A Python script that brute-forces all possible shifts of a Caesar cipher to help decrypt encoded messages.
+            </p>
+            <pre style="background:#f8f8f8; padding:12px; border-radius:8px; overflow-x:auto;">
+# caesar_brute_force.py
+cipher_text = "Wklv lv d whvw phvvdjh"
+for shift in range(26):
+    decrypted = ""
+    for char in cipher_text:
+        if char.isalpha():
+            offset = 65 if char.isupper() else 97
+            decrypted += chr((ord(char) - offset - shift) % 26 + offset)
+        else:
+            decrypted += char
+    print(f"Shift {shift}: {decrypted}")
+            </pre>
+            <a href="https://github.com/penguinmuffin/caesarcipherbruteforce">My Github Repo</a>
         </section>
         <!-- Add more projects as needed -->
     </main>
