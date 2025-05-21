@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects - Warren's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -20,26 +21,81 @@
     <main>
         <h1>My Projects</h1>
         <section class="project">
-            <h2>Project 1: Portfolio Website</h2>
-            <p>A personal website to showcase my skills, background, and projects. Built with HTML, CSS, and JavaScript.</p>
+            <div class="project-title">
+                <h2>File Authenticator</h2>
+            </div>
+            <div class="project-description">
+                <p>A Python script that uses hashes to verify the file's authenticity and ensure that it is not altered.
+                    The script generates a hash of the file and compares it with a known hash to determine if the file has been tampered with.
+                    This is useful for verifying the integrity of files, especially in cybersecurity applications.
+                </p>
+            </div>
+            <div class="project-screenshot">
+                <!-- Replace with your actual screenshot -->
+                <img src="images/file_checker.png" alt="Portfolio Website Screenshot" style="max-width:100%;border-radius:8px;">
+            </div>
+            <div class="project-link">
+                <a href="https://github.com/penguinmuffin/checkfile" target="_blank">View Code on GitHub</a>
+            </div>
         </section>
         <hr>
         <section class="project">
-            <h2>Project 2: Python Calculator</h2>
-            <p>A simple calculator app built using Python that supports basic arithmetic operations.</p>
+            <div class="project-title">
+                <h2>Sigma Skibidi Woopers' Adventure</h2>
+            </div>
+            <div class="project-description">
+                <p>A game created by "Sigma Skibidi Woopers" (Julina Liu, Audrey Rong, Warren Ye) during the 2025 CODE Hackathon.
+                    The game is a simple RPG where players complete tasks to gain a cute Pokemon at the end. 
+                    All of the game's drawings were hand-drawn by Audrey Rong. 
+                </p>
+            </div>
+            <div class="project-carousel slideshow-container">
+                <div class="slider-btn-container">
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                </div>
+                <div class="carousel-frame">
+                    <div class="mySlides fade">
+                        <img src="images/woopers_adventure.png" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/woopers_instruct.png" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/woopers_fish.png" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/woopers_friends.png" style="width:100%;height:100%;object-fit:cover;border-radius:14px;">
+                    </div>
+                </div>
+                <div class="slider-btn-container">
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+            </div>
+            <br>
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+            <div class="project-link">
+                <a href="https://hackathon-2025-pokemon.glitch.me" target="_blank">Play the Game Here!</a>
+            </div>
         </section>
         <hr>
         <section class="project">
-            <h2>Project 3: Network Scanner</h2>
-            <p>A network scanning tool written in Python for identifying devices on a local network.</p>
-        </section>
-        <hr>
-        <section class="project">
-            <h2>Caesar Cipher Brute Force Script</h2>
-            <p>
-                A Python script that brute-forces all possible shifts of a Caesar cipher to help decrypt encoded messages.
-            </p>
-            <pre style="background:#f8f8f8; padding:12px; border-radius:8px; overflow-x:auto;">
+            <div class="project-title">
+                <h2>Caesar Cipher Brute Force Script</h2>
+            </div>
+            <div class="project-description">
+                <p>
+                    A simple Python script created with the help of AI to brute-force all possible shifts of a Caesar cipher to help decrypt encoded messages.
+                    This script iterates through all 25 possible shifts and prints the decrypted text for each shift.
+                    The script is useful for educational purposes and demonstrates the concept of brute-force attacks in cryptography.
+                </p>
+            </div>
+            <div class="project-code">
+                <pre style="background:#f8f8f8; padding:12px; border-radius:8px; overflow-x:auto;">
 # caesar_brute_force.py
 cipher_text = "Wklv lv d whvw phvvdjh"
 for shift in range(26):
@@ -51,13 +107,64 @@ for shift in range(26):
         else:
             decrypted += char
     print(f"Shift {shift}: {decrypted}")
-            </pre>
-            <a href="https://github.com/penguinmuffin/caesarcipherbruteforce">My Github Repo</a>
+                </pre>
+            </div>
+            <div class="project-link">
+                <a href="https://github.com/penguinmuffin/caesarcipherbruteforce" target="_blank">My Caesar Cipher Brute Force Repository</a>
+            </div>
         </section>
         <!-- Add more projects as needed -->
     </main>
     <footer>
         <p>&copy; 2025 Warren's Portfolio</p>
     </footer>
+    <script>
+let slideIndex = 1;
+let lastIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  lastIndex = slideIndex;
+  showSlides(slideIndex += n, n);
+}
+
+function currentSlide(n) {
+  let direction = n > slideIndex ? 1 : -1;
+  lastIndex = slideIndex;
+  showSlides(slideIndex = n, direction);
+}
+
+function showSlides(n, direction = 0) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+
+  // Remove all classes
+  for (i = 0; i < slides.length; i++) {
+    slides[i].classList.remove("active", "slide-left", "slide-right");
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active-dot", "");
+  }
+
+  // Set sliding direction
+  if (direction === 1) {
+    slides[slideIndex-1].classList.add("slide-right");
+  } else if (direction === -1) {
+    slides[slideIndex-1].classList.add("slide-left");
+  }
+
+  slides[slideIndex-1].style.display = "flex";
+  setTimeout(() => {
+    slides[slideIndex-1].classList.add("active");
+    slides[slideIndex-1].classList.remove("slide-left", "slide-right");
+  }, 10);
+
+  dots[slideIndex-1].className += " active-dot";
+}
+    </script>
 </body>
 </html>

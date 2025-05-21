@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Warren's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -17,26 +18,89 @@
             </ul>
         </nav>
     </header>
-    
-    <section id="about">
-        <h2>About Me</h2>
-        <p>My name is Warren Ye. I am a student at Glen A. Wilson High School. I like to learn about programming, cybersecurity, and engineering.</p>
+
+    <!-- Hero/Home Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <img src="images/me.jpg" alt="Warren Ye" class="profile-pic">
+            <h1>Welcome to Warren's Portfolio</h1>
+            <p class="hero-subtitle">
+                I am... <span id="typed-role" style="color:#a259e6;"></span>
+            </p>
+        </div>
     </section>
-    
-    <section id="projects">
-        <h2>My Projects</h2>
-        <p>Here are some of the projects I've worked on:</p>
-        <ul>
-            <li>Project 1</li>
-            <li>Project 2</li>
-            <li>Project 3</li>
-        </ul>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <p>You can reach me at myemail@example.com</p>
-    </section>
+
+    <script>
+    const roles = ["a programmer!", "a cybersecurity enthusiast!", "an engineer!"];
+    let roleIndex = 0;
+    let charIndex = 0;
+    let typing = true;
+
+    function typeRole() {
+        const role = roles[roleIndex];
+        const typedRole = document.getElementById("typed-role");
+        if (typing) {
+            if (charIndex < role.length) {
+                typedRole.textContent += role.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeRole, 80);
+            } else {
+                typing = false;
+                setTimeout(typeRole, 1200);
+            }
+        } else {
+            if (charIndex > 0) {
+                typedRole.textContent = role.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(typeRole, 40);
+            } else {
+                typing = true;
+                roleIndex = (roleIndex + 1) % roles.length;
+                setTimeout(typeRole, 400);
+            }
+        }
+    }
+    document.addEventListener("DOMContentLoaded", typeRole);
+    </script>
+
+    <main>
+        <section class="container about-container">
+            <h2>About Me</h2>
+            <p>
+                My name is <strong>Warren Ye</strong>. I am a student at <span style="color:#a259e6;font-weight:bold;">Glen A. Wilson High School</span> and currently a junior in the Computer Science Pathway.<br><br>
+                I have learned about <span style="color:#e75480;">programming</span>, <span style="color:#e75480;">cybersecurity</span>, and <span style="color:#e75480;">computer networking</span>.<br>
+                In my spare time, I enjoy playing the guitar, reading books, and playing video games with friends.
+            </p>
+        </section>
+        
+        <section class="container reflections-container">
+            <h2>Reflections</h2>
+            <div class="reflection-entry">
+                <h3>Growing Up with Technology</h3>
+                <p>
+                    I have always been curious about technology. Whenever the WiFi went down at home, I would try to fix it myself with my dad's instructions: take out the router cable, restart the modem, and plug it back in.
+                </p>
+            </div>
+            <div class="reflection-entry">
+                <h3>High School & The Computer Science Pathway</h3>
+                <p>
+                    Throughout my high school years, I developed a passion for technology and programming through the Computer Science Pathway taught by Mrs. Bushyeager, who inspired me to enjoy learning more about these fields.
+                </p>
+            </div>
+            <div class="reflection-entry">
+                <h3>Teamwork & Cyber Team</h3>
+                <p>
+                    As a member of the Glen A. Wilson Cyber Team, I learned more about cybersecurity and computer networking, as well as teamwork and collaboration with others.
+                </p>
+            </div>
+            <div class="reflection-entry">
+                <h3>Looking Forward</h3>
+                <p>
+                    My future plans include pursuing a degree in Computer Engineering, attaining a job in the tech industry, and eventually starting my own company.
+                </p>
+            </div>
+        </section>
+    </main>
     
     <footer>
         <p>&copy; 2025 Warren's Portfolio</p>
